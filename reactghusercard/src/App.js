@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import UserCard from './components/UserCard';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state= {
+      user: {}
+    }
+  }
+  componentDidMount() {
+    fetch('https://api.github.com/users/SMoore3773')
+    .then(response => {
+      console.log(response.json())
+      response.json()})
+    .then(response => {this.setState({user: response});
+  console.log(this.response)})
+    .catch(err => console.log('catch error in api req',err))
+  }
 
+
+    render() {
+      
+      
+      return (
+        
+        <div className="App">
+          <p>app</p>
+        </div>
+    );
+    }
+}
 export default App;
