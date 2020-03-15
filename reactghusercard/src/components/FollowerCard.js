@@ -3,10 +3,11 @@ import React from 'react';
 const FollowerCard = props => {
     console.log('props in followercard',props)
     return (
-        <div>
-            <h2> Followers</h2>
-            <img alt='follower picture' src={props.pic} />
-            <h3>{props.name}</h3>
+        <div onClick={props.setSearchUser}>
+            
+            <img className='followImg' alt='follower' src={props.pic} />
+            <h3 className='followerLogin'>{props.login}</h3>
+            <a className='followerLink' href={props.html_url} >{props.html_url}</a>
 
         </div>
     )
