@@ -47,18 +47,19 @@ display:flex;
 flex-direction:column;
 justify-content: center;
 font-size: 1.25rem;
-
 width: 35%;
 `
 const UserBio = styled.p`
 margin: 1rem;
-
+font-size: 1.25rem;
 `
 const UserHandle = styled.p`
 margin: 1rem;
+font-size: 1rem;
 `
 const UserLink = styled.a`
 margin: 1rem;
+font-size: 1rem;
 text-decoration:none;
 color:black;
 &:hover{
@@ -67,6 +68,10 @@ color:black;
 &:visited{
     color:black;
 }
+`
+const UserRepos = styled.p`
+margin: 1rem;
+font-size: 1rem;
 `
 const FollowersBox = styled.div`
 display: flex;
@@ -111,7 +116,7 @@ console.log('usercard props',props)
                         <UserBio className='userBio'>{props.user.bio}</UserBio>
                         <UserHandle className='userHandle'>GitHub Handle: {props.user.login}</UserHandle>
                         <UserLink  className='userLink' href={props.user.html_url}>{props.user.html_url}</UserLink>
-                        <UserBio className='userRepo'>Public Repo's: {props.user.public_repos}</UserBio>
+                        <UserRepos className='userRepo'>Public Repo's: {props.user.public_repos}</UserRepos>
                     </UserText>
                 </UserInfo>
             </UserBox>

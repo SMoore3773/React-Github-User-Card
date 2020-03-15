@@ -13,6 +13,7 @@ margin: 1.5rem;
 const FollowerImg = styled.img`
 width: 250px;
 border-radius: .25rem;
+box-shadow:.2rem .2rem .5rem black;
 `
 const FollowerHeader = styled.h3`
 font-size:1.5rem;
