@@ -73,7 +73,7 @@ min-width: 260px;
 border: solid 1.5px #FCAF46;
 border-radius:.5rem;
 box-shadow:.2rem .2rem .5rem #FCAF46;
-/* object-fit:cover; */
+object-fit:cover;
 @media(max-width:750px){
     width:80%;
   
@@ -97,7 +97,7 @@ display:flex;
 flex-direction:column;
 justify-content: center;
 font-size: 1.25rem;
-width: 35%;
+width: 50%;
 
 @media (max-width:750px){
     width:65%;
