@@ -68,9 +68,16 @@ border-top-right-radius:2rem;
 const UserImg = styled.img`
 margin: 1rem;
 width:35%;
+min-height:260px;
+min-width: 260px;
 border: solid 1.5px #FCAF46;
 border-radius:.5rem;
 box-shadow:.2rem .2rem .5rem #FCAF46;
+/* object-fit:cover; */
+@media(max-width:750px){
+    width:80%;
+  
+}
 `
 const UserInfo = styled.div`
 display:flex;
@@ -79,6 +86,11 @@ justify-content: space-evenly;
 padding:2rem;
 margin:1rem;
 align-content: center;
+@media (max-width:750px) {
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items:center;
+}
 `
 const UserText = styled.div`
 display:flex;
@@ -86,6 +98,10 @@ flex-direction:column;
 justify-content: center;
 font-size: 1.25rem;
 width: 35%;
+
+@media (max-width:750px){
+    width:65%;
+}
 `
 const UserBio = styled.p`
 margin: 1rem;
