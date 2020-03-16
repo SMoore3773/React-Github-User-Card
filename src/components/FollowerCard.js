@@ -23,9 +23,9 @@ const FollowerCard = props => {
 const FollowerBox = styled.div`
 display:flex;
 flex-direction:column;
+justify-content:center;
 box-sizing:border-box;
 border-radius: 1rem;
-/* border: solid black 1px; */
 padding: 1.5rem;
 box-shadow: .25rem .25rem .5rem #0D4956;
 margin: 1.5rem;
@@ -36,7 +36,8 @@ border: solid 1.5px #1CD2FC;
 }
 `
 const FollowerImg = styled.img`
-width: 250px;
+width: 225px;
+margin:1rem;
 border-radius: .25rem;
 box-shadow:.2rem .2rem .5rem black;
 `
