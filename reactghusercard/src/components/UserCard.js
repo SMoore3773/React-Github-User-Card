@@ -2,6 +2,44 @@ import React from 'react';
 import FollowerCard from './FollowerCard';
 import styled from 'styled-components';
 
+const UserCard = props => {
+    
+//console.log tracking incoming props into UserCard
+console.log('UserCard: props',props)
+    
+return(
+        <UserContainer className='userContainer'>
+            <UserBox  className='userCard'>
+                <UserHeader className='userHeader'>{props.user.name}</UserHeader>
+                <UserInfo>
+                    <UserImg className='userImg' alt='user' src={props.user.avatar_url}/>
+                    <UserText>
+                        <UserBio className='userBio'>{props.user.bio}</UserBio>
+                        <UserHandle className='userHandle'>GitHub Handle: {props.user.login}</UserHandle>
+                        <UserLink  className='userLink' href={props.user.html_url}>{props.user.html_url}</UserLink>
+                        <UserRepos className='userRepo'>Public Repo's: {props.user.public_repos}</UserRepos>
+                    </UserText>
+                </UserInfo>
+            </UserBox>
+            <FollowersBox className='followerContainer'>
+                <FollowerHeader className='userFollwerHeader'>Followers</FollowerHeader>
+                <FollowerCards className='followerCards'>
+                    {props.followers.map(fol => 
+                    <FollowerCard
+                     setSearchUser={user => props.setSearchUser(user)}  
+                     key={fol.id} 
+                     login={fol.login} 
+                     pic={fol.avatar_url} 
+                     html_url={fol.html_url} 
+                     />)}
+                </FollowerCards>
+            </FollowersBox>
+        </UserContainer>
+    )
+}
+
+//styling definitions with styled components
+
 const UserContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -39,7 +77,6 @@ flex-direction:row;
 justify-content: space-evenly;
 padding:2rem;
 margin:1rem;
-/* border: solid red 1px; */
 align-content: center;
 `
 const UserText = styled.div`
@@ -101,33 +138,5 @@ flex-wrap:wrap;
 justify-content: space-evenly;
 padding:2rem;
 margin:1rem;
-
 `
-
-const UserCard = props => {
-console.log('usercard props',props)
-    return(
-        <UserContainer className='userContainer'>
-            <UserBox  className='userCard'>
-                <UserHeader className='userHeader'>{props.user.name}</UserHeader>
-                <UserInfo>
-                    <UserImg className='userImg' alt='user' src={props.user.avatar_url}/>
-                    <UserText>
-                        <UserBio className='userBio'>{props.user.bio}</UserBio>
-                        <UserHandle className='userHandle'>GitHub Handle: {props.user.login}</UserHandle>
-                        <UserLink  className='userLink' href={props.user.html_url}>{props.user.html_url}</UserLink>
-                        <UserRepos className='userRepo'>Public Repo's: {props.user.public_repos}</UserRepos>
-                    </UserText>
-                </UserInfo>
-            </UserBox>
-            <FollowersBox className='followerContainer'>
-                <FollowerHeader className='userFollwerHeader'>Followers</FollowerHeader>
-                <FollowerCards className='followerCards'>
-                    {props.followers.map(fol => <FollowerCard setSearchUser={user => props.setSearchUser(user)}  key={fol.id} login={fol.login} pic={fol.avatar_url} html_url={fol.html_url} />)}
-                </FollowerCards>
-            </FollowersBox>
-        </UserContainer>
-    )
-}
-
 export default UserCard; 

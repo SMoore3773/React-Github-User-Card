@@ -1,6 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+const FollowerCard = props => {
+
+    //console log tracking props in FollowerCard
+    console.log('FollowerCard: props',props)
+
+    return (
+        <FollowerBox onClick={() => props.setSearchUser(props.login)}>
+            
+            <FollowerImg className='followImg' alt='follower' src={props.pic} />
+            <FollowerHeader className='followerLogin'>{props.login}</FollowerHeader>
+            <FollowerLilnk className='followerLink' href={props.html_url} >{props.html_url}</FollowerLilnk>
+
+        </FollowerBox>
+    )
+}
+
+//styling for FollowerCard using styled Components
+
 const FollowerBox = styled.div`
 display:flex;
 flex-direction:column;
@@ -28,18 +47,4 @@ text-decoration: none;
     text-decoration: underline;
 }
 `
-
-const FollowerCard = props => {
-    console.log('props in followercard',props)
-    return (
-        <FollowerBox onClick={() => props.setSearchUser(props.login)}>
-            
-            <FollowerImg className='followImg' alt='follower' src={props.pic} />
-            <FollowerHeader className='followerLogin'>{props.login}</FollowerHeader>
-            <FollowerLilnk className='followerLink' href={props.html_url} >{props.html_url}</FollowerLilnk>
-
-        </FollowerBox>
-    )
-}
-
 export default FollowerCard;
