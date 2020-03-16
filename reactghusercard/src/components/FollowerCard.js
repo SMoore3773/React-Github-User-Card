@@ -23,11 +23,17 @@ const FollowerCard = props => {
 const FollowerBox = styled.div`
 display:flex;
 flex-direction:column;
+box-sizing:border-box;
 border-radius: 1rem;
-border: solid black 1px;
+/* border: solid black 1px; */
 padding: 1.5rem;
-box-shadow: .25rem .25rem .5rem black;
+box-shadow: .25rem .25rem .5rem #0D4956;
 margin: 1.5rem;
+border: solid 1.5px #1CD2FC;
+&:hover{
+    border: solid 1.5px #fcaf46;
+    box-shadow: .25rem .25rem .5rem #fcaf46;
+}
 `
 const FollowerImg = styled.img`
 width: 250px;

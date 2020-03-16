@@ -3,7 +3,7 @@ import FollowerCard from './FollowerCard';
 import styled from 'styled-components';
 
 const UserCard = props => {
-    
+
 //console.log tracking incoming props into UserCard
 console.log('UserCard: props',props)
     
@@ -68,8 +68,9 @@ border-top-right-radius:2rem;
 const UserImg = styled.img`
 margin: 1rem;
 width:35%;
+border: solid 1.5px #FCAF46;
 border-radius:.5rem;
-box-shadow:.2rem .2rem .5rem black;
+box-shadow:.2rem .2rem .5rem #FCAF46;
 `
 const UserInfo = styled.div`
 display:flex;
